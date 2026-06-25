@@ -9,8 +9,17 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const isWindows = os.platform() === 'win32';
 // Jika di Linux/Railway, cukup gunakan 'yt-dlp' agar sistem mencarinya di PATH
-const ytDlpPath = isWindows ? path.join(__dirname, 'yt-dlp.exe') : 'yt-dlp';
-const ffmpegPath = isWindows ? path.join(__dirname, 'ffmpeg.exe') : 'ffmpeg';
+console.log('yt-dlp path:', ytDlpPath);
+console.log('ffmpeg path:', ffmpegPath);
+
+// Test apakah command tersedia
+const { execSync } = require('child_process');
+try {
+    console.log('yt-dlp version:', execSync('yt-dlp --version').toString());
+    console.log('ffmpeg version:', execSync('ffmpeg -version').toString().split('\n')[0]);
+} catch (e) {
+    console.error('Command tidak ditemukan:', e.message);
+}
 const folderDownloads = path.join(__dirname, 'downloads');
 
 // Pastikan folder download ada
