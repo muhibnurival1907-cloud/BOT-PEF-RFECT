@@ -1,0 +1,8 @@
+{
+  "build": {
+    "buildCommand": "npm install --no-package-lock"
+  },
+  "deploy": {
+    "startCommand": "node index.js"
+  }
+}
