@@ -9,7 +9,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 
 const isWindows = os.platform() === 'win32';
 // Jika di Linux/Railway, cukup gunakan 'yt-dlp' agar sistem mencarinya di PATH
-const ytDlpPath = isWindows ? path.join(__dirname, 'yt-dlp.exe') : 'yt-dlp'; : '/usr/local/bin/yt-dlp';
+const ytDlpPath = isWindows ? path.join(__dirname, 'yt-dlp.exe') : 'yt-dlp';
 const ffmpegPath = isWindows ? path.join(__dirname, 'ffmpeg.exe') : 'ffmpeg';
 const folderDownloads = path.join(__dirname, 'downloads');
 
