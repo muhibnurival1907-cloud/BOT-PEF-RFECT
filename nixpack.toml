@@ -1,0 +1,11 @@
+[phases.setup]
+aptPkgs = ["ffmpeg", "python3-pip", "curl"]
+
+[phases.install]
+cmds = [
+  "pip3 install --no-cache-dir yt-dlp",
+  "yt-dlp -U"  # update ke versi terbaru
+]
+
+[start]
+cmd = "marbeque bot"
